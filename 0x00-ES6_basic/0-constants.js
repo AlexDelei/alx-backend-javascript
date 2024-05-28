@@ -1,3 +1,5 @@
+#!/usr/bin/node
+
 export function taskFirst() {
 	const first = 'I prefer const when I can.';
 	return first;
@@ -13,3 +15,4 @@ export function taskNext() {
 
 	return combination;
 }
+
