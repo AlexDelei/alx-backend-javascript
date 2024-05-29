@@ -4,6 +4,7 @@
  * @param {*} employees 
  * @returns an objects with employees
  */
+
 export default function createEmployeesObject(departmentName, employees) {
   return {
     [`${departmentName}`]: employees
