@@ -1,6 +1,6 @@
 /**
  * createReportObject - object with goodstuff
- * @param { the return values of the previous function } employeesList 
+ * @param { the return values of the previous function } employeesList
  * @returns  an object with keys that return data
  */
 export default function createReportObject(employeesList) {
@@ -8,8 +8,5 @@ export default function createReportObject(employeesList) {
 
   const getNumberOfDepartments = (data) => Object.keys(data).length;
 
-  return {
-    allEmployees,
-    getNumberOfDepartments
-  };
+  return { allEmployees, getNumberOfDepartments };
 }
