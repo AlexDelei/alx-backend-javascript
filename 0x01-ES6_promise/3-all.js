@@ -6,6 +6,6 @@ export default function handleProfileSignup() {
       console.log(`${photoRespo.body} ${userRespo.firstName} ${userRespo.lastName}`);
     })
     .catch(() => {
-      console.log('Signup system offline')
+      console.log('Signup system offline');
     });
 }
