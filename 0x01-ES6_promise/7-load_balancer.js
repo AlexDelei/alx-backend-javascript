@@ -1,7 +1,7 @@
 /**
  * loadBalancer - returns the promise that resolved first
- * @param {*} chinaDownload 
- * @param {*} USDownload 
+ * @param {*} chinaDownload
+ * @param {*} USDownload
  * @returns first resolved Promise
  */
 export default function loadBalancer(chinaDownload, USDownload) {
