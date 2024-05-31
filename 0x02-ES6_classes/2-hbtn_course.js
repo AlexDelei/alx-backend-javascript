@@ -34,7 +34,7 @@ export default class HolbertonCourse {
   }
 
   set students(val) {
-    if (!val.isArray()) throw new TypeError('Students must be an array');
+    if (!Array.isArray(val)) throw new TypeError('Students must be an array');
 
     for (const std of val) {
       if (typeof std !== 'string') throw new TypeError('Students must contain strings');
