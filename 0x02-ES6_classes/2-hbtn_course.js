@@ -4,7 +4,7 @@ export default class HolbertonCourse {
     if (typeof length !== 'number') throw new TypeError('Length must be a number');
     if (!Array.isArray(students)) throw new TypeError('Students must be an array');
     for (const std of students) {
-        if (typeof std !== 'string') throw new TypeError('Students must contain strings')
+      if (typeof std !== 'string') throw new TypeError('Students must contain strings');
     }
     this._name = name;
     this._length = length;
