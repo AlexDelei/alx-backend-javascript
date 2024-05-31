@@ -37,7 +37,7 @@ export default class HolbertonCourse {
     }
     for (const std of val) {
       if (typeof std !== 'string') {
-        throw new TypeError('students must contain strings')
+        throw new TypeError('students must contain strings');
       }
     }
     this._students = val;
