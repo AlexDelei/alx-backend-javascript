@@ -1,7 +1,7 @@
 /**
- * getListStudentIds - map > constructs a new array after iterating
- * @param {an array of objects} arr 
- * @returns 
+ * getListStudentIds - map > constructs a new array after iterating.
+ * @param {an array of objects} arr
+ * @returns a new array of ids
  */
 export default function getListStudentIds(arr) {
   if (!Array.isArray(arr)) return [];
