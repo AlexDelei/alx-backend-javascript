@@ -3,7 +3,7 @@ export default function cleanSet(set, startString) {
   if (!startString || !startString.length) return results;
 
   for (const val of set) {
-    if (val.startsWith(startString)) {
+    if (val && val.startsWith(startString)) {
       results += `${val.slice(startString.length)}-`;
     }
   }
