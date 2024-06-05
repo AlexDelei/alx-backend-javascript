@@ -37,15 +37,11 @@ function makeUpTable(students: Student[]): void {
 
         [student.firstName, student.location].forEach(text => {
             const td = document.createElement('td');
-
             td.textContent = text;
-
             row.appendChild(td);
         });
-
         table.appendChild(row);
     })
-
     document.body.appendChild(table);
 }
 
