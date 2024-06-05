@@ -1,3 +1,7 @@
+/**
+ * groceriesList - constructing a new map
+ * @returns a new map object
+ */
 export default function groceriesList() {
   const newMap = new Map();
   newMap.set('Apples', 10);
