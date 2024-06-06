@@ -17,7 +17,7 @@ const teach: Teacher  = {
 
 // console.log(teach)
 
-// Extends functoinality
+// Extends interface
 interface Directors extends Teacher {
     numberOfReports: number;
 }
@@ -30,5 +30,15 @@ const director: Directors = {
     location: 'Hungaray',
     numberOfReports: 12,
 }
+// console.log(director)
 
-console.log(director)
+// a function interface
+interface printTeacherFunction {
+    (firstName: string, lastName: string): string;
+}
+
+const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+    return `${firstName.charAt(0)}. ${lastName}`;
+}
+
+console.log(printTeacher("Alex", "Delei"));
