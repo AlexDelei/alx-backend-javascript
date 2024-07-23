@@ -12,4 +12,4 @@ app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}`);
 });
 
-module.exports = createServer;
+module.exports = app;
