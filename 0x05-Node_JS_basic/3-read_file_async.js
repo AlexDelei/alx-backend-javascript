@@ -23,15 +23,11 @@ async function countStudents(path) {
         sweNames.push(names);
       }
     }
-    
-    console.log(`Number of students: ${students.length}`);
-    console.log(`Number of students in CS: ${cs}. List: ${firstName.join(', ')}`);
-    console.log(`Number of students in SWE: ${swe}. List: ${sweNames.join(', ')}`);
     return (
-        `Number of students: ${students.length}\n`+
-        `Number of students in CS: ${cs}. List: ${firstName.join(', ')}\n`+
-        `Number of students in SWE: ${swe}. List: ${sweNames.join(', ')}`
-    )
+      `Number of students: ${students.length}\n`
+      + `Number of students in CS: ${cs}. List: ${firstName.join(', ')}\n`
+      + `Number of students in SWE: ${swe}. List: ${sweNames.join(', ')}`
+    );
   } catch (error) {
     console.error('Cannot load the database');
   }
