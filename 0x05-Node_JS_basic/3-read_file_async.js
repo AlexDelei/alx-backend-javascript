@@ -24,9 +24,6 @@ async function countStudents(path) {
       }
     }
 
-    console.log(`Number of students: ${students.length}`);
-    console.log(`Number of students in CS: ${cs}. List: ${firstName.join(', ')}`);
-    console.log(`Number of students in SWE: ${swe}. List: ${sweNames.join(', ')}`);
     return (
       `Number of students: ${students.length}\n`
       + `Number of students in CS: ${cs}. List: ${firstName.join(', ')}\n`
