@@ -1,3 +1,5 @@
-export default function displayMessage(input) {
+function displayMessage(input) {
   process.stdout.write(input);
 }
+
+module.exports = displayMessage;
