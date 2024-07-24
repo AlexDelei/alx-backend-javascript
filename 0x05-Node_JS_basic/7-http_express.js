@@ -10,7 +10,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  if (!process.argv[2]) {
+  if (process.argv[2] === '') {
     res.status(500).end(
       'This is the list of our students\n'
       + 'Cannot load the database',
