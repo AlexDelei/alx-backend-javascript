@@ -17,7 +17,7 @@ const app = createServer(async (req, res) => {
       res.statusCode = 500;
       res.write(
         'This is the list of our students\n'
-        + 'Cannot load the database\n',
+        + 'Cannot load the database',
       );
     }
     res.end();
