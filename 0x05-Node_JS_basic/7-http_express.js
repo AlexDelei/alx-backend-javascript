@@ -10,18 +10,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/students', async (req, res) => {
-  if (process.argv[2] === '') {
-    res.status(500).end(
-      'This is the list of our students\n'
-      + 'Cannot load the database',
-    );
-  }
   try {
-    const data = await countStudents(process.argv[2]);
-    res.status(200).send(`This is the list of our students\n${data}`);
-    res.end();
+    if (process.argv[2]) {
+      const data = await countStudents(process.argv[2]);
+      res.status(200).send(`This is the list of our students\n${data}`);
+    } else throw new Error('Cannot load the database');
   } catch (error) {
-    res.status(500).end(`This is the list of our students\n${error.message}`);
+    res.status(500).send(`This is the list of our students\n${error.message}`);
   }
 });
 
