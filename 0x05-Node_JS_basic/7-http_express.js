@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 
 app.get('/students', async (req, res) => {
   if (!process.argv[2]) {
-    res.statusCode = 500;
+    res.statusCode = 404;
     res.end(
       'This is the list of our students\n'
       + 'Cannot load the database',
