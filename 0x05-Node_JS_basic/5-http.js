@@ -10,15 +10,17 @@ const app = createServer(async (req, res) => {
     res.end();
   } else if (req.url === '/students') {
     try {
-      const result = await countStudents(process.argv[2]);
-      res.statusCode = 200;
-      res.write(`This is the list of our students\n${result}`);
-      res.end();
+      if (process.argv[2]) {
+        const result = await countStudents(process.argv[2]);
+        res.statusCode = 200;
+        res.write(`This is the list of our students\n${result}`);
+        res.end();
+      } else throw Error('Cannot load the database');
     } catch (error) {
       res.statusCode = 500;
       res.end(
         'This is the list of our students\n'
-        + 'Cannot load the database',
+        + `${error.message}`,
       );
     }
   }
