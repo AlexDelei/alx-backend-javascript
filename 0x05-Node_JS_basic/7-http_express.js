@@ -19,7 +19,7 @@ app.get('/students', async (req, res) => {
     res.statusCode = 500;
     res.end(
       'This is the list of our students\n'
-      + `${error}`,
+      + `${error.message}`,
     );
   }
 });
