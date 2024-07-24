@@ -11,7 +11,7 @@ const app = createServer(async (req, res) => {
     res.end();
   } else if (req.url === '/students') {
     try {
-      const result = await countStudents('database.csv');
+      const result = await countStudents(process.argv[2]);
       res.write(`This is the list of our students\n${result}`);
     } catch (error) {
       res.write('Cannot load the database');
