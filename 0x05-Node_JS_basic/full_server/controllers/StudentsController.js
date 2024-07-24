@@ -1,9 +1,11 @@
 const readDatabase = require('../utils');
 
+const db = process.argv[2];
+
 class StudentsController {
   static async getAllStudents(request, response) {
     try {
-      const allData = await readDatabase('database.csv');
+      const allData = await readDatabase(db);
       response.statusCode = 200;
       response.send(
         'This is the list of our students\n'
@@ -18,11 +20,9 @@ class StudentsController {
   }
 
   static async getAllStudentsByMajor(request, response) {
-    const major = request.params.major;
-
-    if (major === 'CS') {
+    if (request.params.major === 'CS') {
       try {
-        const csData = await readDatabase('database.csv');
+        const csData = await readDatabase(db);
         const results = csData[0].CS;
         response.statusCode = 200;
         response.send(`List: ${results}`);
@@ -30,9 +30,9 @@ class StudentsController {
         response.statusCode = 500;
         response.send('Cannot load the database');
       }
-    } else if (major === 'SWE') {
+    } else if (request.params.major === 'SWE') {
       try {
-        const sweData = await readDatabase('database.csv');
+        const sweData = await readDatabase(db);
         const resultss = sweData[0].SWE;
         response.statusCode = 200;
         response.send(`List: ${resultss}`);
