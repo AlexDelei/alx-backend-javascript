@@ -13,14 +13,14 @@ const app = createServer(async (req, res) => {
       const result = await countStudents(process.argv[2]);
       res.statusCode = 200;
       res.write(`This is the list of our students\n${result}`);
+      res.end();
     } catch (error) {
       res.statusCode = 500;
-      res.write(
+      res.end(
         'This is the list of our students\n'
         + 'Cannot load the database',
       );
     }
-    res.end();
   }
 });
 
