@@ -25,7 +25,7 @@ class StudentsController {
         const csData = await readDatabase(db);
         const results = csData[0].CS;
         response.statusCode = 200;
-        response.send(`List: ${results}`);
+        response.send(`List: ${results.join(', ')}`);
       } catch (error) {
         response.statusCode = 500;
         response.send('Cannot load the database');
@@ -35,7 +35,7 @@ class StudentsController {
         const sweData = await readDatabase(db);
         const resultss = sweData[0].SWE;
         response.statusCode = 200;
-        response.send(`List: ${resultss}`);
+        response.send(`List: ${resultss.join(', ')}`);
       } catch (error) {
         response.statusCode = 500;
         response.send('Cannot load the database');
