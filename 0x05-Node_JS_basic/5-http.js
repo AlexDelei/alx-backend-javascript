@@ -11,10 +11,10 @@ const app = createServer(async (req, res) => {
   } else if (req.url === '/students') {
     try {
       const result = await countStudents(process.argv[2]);
-      res.statusCode = 200
+      res.statusCode = 200;
       res.write(`This is the list of our students\n${result}`);
     } catch (error) {
-      res.statusCode = 500
+      res.statusCode = 500;
       res.write('Cannot load the database');
     }
     res.end();
