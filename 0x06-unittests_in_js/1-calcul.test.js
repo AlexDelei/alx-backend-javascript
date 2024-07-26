@@ -15,8 +15,16 @@ describe('combining descriptions', () => {
   });
 
   it('should correctly divide rounded numbers', () => {
+    assert.equal(calculateNumber('DIVIDE', 6, 2), 3);
+    assert.equal(calculateNumber('DIVIDE', 3.3, 1), 3);
+    assert.equal(calculateNumber('DIVIDE', 1.4, 4.5), 0.2);
+    assert.equal(calculateNumber('DIVIDE', 1.7, 3.7), 0.5);
+    assert.equal(calculateNumber('DIVIDE', -6, 3), -2);
+    assert.equal(calculateNumber('DIVIDE', -6, -3), 2);
+    assert.equal(calculateNumber('DIVIDE', -6.2, -3.4), 2);
+    assert.equal(calculateNumber('DIVIDE', -2, 2.1), -1);
+
     assert.strictEqual(calculateNumber('DIVIDE', 7.7, 2.1), 4); // 8 / 2
-    assert.strictEqual(calculateNumber('DIVIDE', 9.5, 2.9), 3); // 10 / 3
     assert.strictEqual(calculateNumber('DIVIDE', -6.2, 2.3), -3); // -6 / 2
   });
 
