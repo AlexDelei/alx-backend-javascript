@@ -10,7 +10,7 @@ const calculateNumber = (type, a, b) => {
       return 'Error';
     }
     const res = Math.round(a) / Math.round(b);
-    return Math.round(res);
+    return res;
   }
 };
 
