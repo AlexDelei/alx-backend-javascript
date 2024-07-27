@@ -7,15 +7,12 @@ app.get('/', (req, res) => {
 });
 
 app.get('/cart/:id', (req, res) => {
-  if (!req.params.id) {
-    return res.send('id cannot be empty');
-  }
   const id = parseInt(req.params.id, 10);
-  if (isNaN(id) || id < 0) {
-    return res.status(404).send('id must be an integer');
-  }
+
+  if (!(id) || isNaN(id) || id < 0) {
+    return res.status(404).send('An error occured while trying to make your request');
+  };
   res.status(200).send(`Payment methods for cart ${id}`);
-  res.end();
 });
 
 app.listen(port, () => {
