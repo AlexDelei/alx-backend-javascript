@@ -21,9 +21,9 @@ app.get('/cart/:id', (req, res) => {
 app.get('/available_payments', (req, res) => {
   res.status(200).send(
     {
-      'payment_methods': {
-        'credit_cards': true,
-        'paypal': false,
+      payment_methods: {
+        credit_cards: true,
+        paypal: false,
       },
     }
   );
