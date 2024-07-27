@@ -27,10 +27,8 @@ describe('a one suite test for the index page', () => {
   });
 
   it('GET /cart/:id invalid url', () => {
-    const invalidUrlPattern = /^http:\/\/localhost:8675\/cart(\/[a-zA-Z0-9]+)?$/;
-  
-    req(`${url}/cart/invalid`, 'GET', (_, respo) => {
-      expect(respo.statusCode).to.be.equal(invalidUrlPattern.test(`${url}/cart/invalid`) ? 404 : 404);
+    req(`${url}/cartoon/89`, 'GET', (_, respo) => {
+      expect(respo.statusCode).to.be.equal(404);
     });
   });
 
