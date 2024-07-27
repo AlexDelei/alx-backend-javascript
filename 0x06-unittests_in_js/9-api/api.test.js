@@ -12,12 +12,6 @@ describe('a one suite test for the index page', () => {
       expect(body).to.be.equal('Welcome to the payment system');
     });
   });
-
-  it('GET /cartoon/:id invalid url', () => {
-    req(`${url}/cartoon/89`, 'GET', (_, respo) => {
-      expect(respo.statusCode).to.be.equal(404);
-    });
-  });
   
   it('GET /cart/:id where id is provided and is a number', () => {
     req(`${url}/cart/9`, 'GET', (_, respo, body) => {
@@ -34,6 +28,12 @@ describe('a one suite test for the index page', () => {
 
   it('GET /cart/test where the id is a string', () => {
     req(`${url}/cart/test`, 'GET', (_, respo) => {
+      expect(respo.statusCode).to.be.equal(404);
+    });
+  });
+
+  it('GET /cartoon/:id invalid url', () => {
+    req(`${url}/cartoon/89`, 'GET', (_, respo) => {
       expect(respo.statusCode).to.be.equal(404);
     });
   });
