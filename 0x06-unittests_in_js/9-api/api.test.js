@@ -13,6 +13,12 @@ describe('a one suite test for the index page', () => {
     });
   });
 
+  it('GET /cartoon/:id invalid url', () => {
+    req(`${url}/cartoon/89`, 'GET', (_, respo) => {
+      expect(respo.statusCode).to.be.equal(404);
+    });
+  });
+  
   it('GET /cart/:id where id is provided and is a number', () => {
     req(`${url}/cart/9`, 'GET', (_, respo, body) => {
       expect(respo.statusCode).to.be.equal(200);
